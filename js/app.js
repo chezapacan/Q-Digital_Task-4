@@ -208,10 +208,10 @@ class UI {
 
   removeCartItem(id) {
     cartItems = cartItems.filter((item) => item.id !== id);
+    this.removeCartSliderItem(id);
     this.checkEmptyCart();
     this.defineCartTotal();
     this.restoreProductBtn(id);
-    this.removeCartSliderItem(id);
     Storage.saveCartItems(cartItems);
   }
 
